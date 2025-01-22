@@ -1,0 +1,22 @@
+{
+  "name": "algosphere-framework",
+  "version": "1.0.0",
+  "description": "An AI Driven CLI Companion on Solana.",
+  "main": "index.js",
+  "scripts": {
+    "interact": "node --no-deprecation app/functions/interactAI.js",
+    "deploy": "node --no-deprecation app/functions/createToken.js",
+    "ask": "node --no-deprecation app/functions/askAI.js",
+    "trade": "node --no-deprecation app/functions/tradeToken.js"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.98.0",
+    "bs58": "^6.0.0",
+    "dotenv": "^16.4.7",
+    "form-data": "^4.0.1",
+    "node-fetch": "^3.3.2",
+    "openai": "^4.79.1",
+    "punycode": "^2.3.1"
+  },
+  "type": "module"
+}
