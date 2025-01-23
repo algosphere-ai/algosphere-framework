@@ -71,15 +71,15 @@ AMOUNT=1000
 
 #### 🔑 Solana Parameters
 - `PRIVATE_KEYPAIR`: Your secure Solana private keypair
-- `RPC_ENDPOINT`: Network endpoint URL for blockchain interaction
+- `RPC_ENDPOINT`: Network endpoint URL for blockchain interaction (keep it default)
 
 #### 🎯 OpenAI Parameters
 - `OPENAI_API_KEY`: Authentication key for AI capabilities
 
 #### 📊 Trading Parameters
-- `ACTION`: Trade direction (`buy`/`sell`)
+- `ACTION`: Trade direction (`buy` / `sell`)
 - `MINT`: Token contract address
-- `AMOUNT`: Transaction volume
+- `AMOUNT`: Transaction volume (Token Count)
 
 ## 🎮 Core Commands
 
@@ -94,6 +94,7 @@ Before deployment:
 - Configure agent details in `app/agent/details.js`
 - Add your agent's logo to `app/agent/logo.png`
 - Ensure your Solana private keypair is set in `.env`
+- Make sure you have enough funds in your solana wallet to cover transaction fees and initial buy fees. (5-10$ approx)
 
 ### 2. Query AI Agents
 Interact with deployed agents using natural language queries:
@@ -114,7 +115,7 @@ npm run trade
 Configure trading parameters in `.env` before execution for:
 - Token selection (MINT address)
 - Trade direction (buy/sell)
-- Transaction volume
+- Transaction volume (Token count)
 
 ### 4. Interactive Mode
 Engage in ongoing conversations with AI agents:
