@@ -134,11 +134,11 @@ async function fetchTrendingTokens() {
 }
 
 async function interactAgent(agentName, question) {
-    const hasMarketcapKeywords = /Marketcap/i.test(question);
-    const hasTrendingKeywords = /Trending/i.test(question);
-    const hasTopHoldersKeywords = /Top.*holders/i.test(question);
-    const hasTopBuyersKeywords = /First.*top.*buyers/i.test(question);
-    const agentExists = await checkAgentExists(agentName); // Check if agent exists in database
+    const hasMarketcapKeywords = /marketcap/i.test(question);
+    const hasTrendingKeywords = /trending/i.test(question);
+    const hasTopHoldersKeywords = /top.*holders/i.test(question);
+    const hasTopBuyersKeywords = /first.*top.*buyers/i.test(question);
+    const agentExists = await checkAgentExists(agentName);
     if (!agentExists) {
         console.error(`Cannot process request. Agent "${agentName}" is not registered.`);
         return;
