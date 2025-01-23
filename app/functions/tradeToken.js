@@ -1,20 +1,20 @@
-import * as dotenv from "dotenv";
+import { config } from "dotenv";
 import { VersionedTransaction, Connection, Keypair } from "@solana/web3.js";
 import bs58 from "bs58";
 import fetch from "node-fetch";
-// import { checkAgentExists } from "../lib/agent-db.js";
-dotenv.config();
+import { checkAgentExists } from "../lib/agent-db.js";
+config();
 
 const RPC_ENDPOINT =
 	process.env.RPC_ENDPOINT || "https://api.mainnet-beta.solana.com";
 const web3Connection = new Connection(RPC_ENDPOINT, "confirmed");
 
 async function sendPortalTransaction(agentName) {
-	// const agent = await checkAgentExists(agentName);
-	// if (!agent) {
-	// 	console.error(`Error: Agent "${agentName}" not found in database.`);
-	// 	return;
-	// }
+	const agent = await checkAgentExists(agentName);
+	if (!agent) {
+		console.error(`Error: Agent "${agentName}" not found in database.`);
+		return;
+	}
 
 	const action = process.env.ACTION || "buy";
 	const mint = process.env.MINT || "";

@@ -1,20 +1,16 @@
 import { OpenAI } from "openai";
-
-import * as dotenv from "dotenv";
 import { getAgent } from "../lib/agent-db.js";
-dotenv.config();
+import { config } from "dotenv";
+config();
 
 const openAi = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 async function aiResponse(name, message) {
-
     const agent = await getAgent(name);
-
     if (!agent) {
         console.error(`Error: Agent "${name}" not found in database.`);
         return;
     }
-
     try {
         const response = await openAi.chat.completions.create({
             model: "gpt-3.5-turbo",

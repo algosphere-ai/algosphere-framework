@@ -1,5 +1,5 @@
-import * as dotenv from "dotenv";
-dotenv.config();
+import { config } from "dotenv";
+config();
 
 import { VersionedTransaction, Connection, Keypair } from "@solana/web3.js";
 import { agentDetails } from "../agent/details.js";
