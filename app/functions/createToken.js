@@ -17,7 +17,7 @@ async function createTokenTx() {
 	const agentExists = await checkAgentExists(agentName);
 
 	if (agentExists) {
-		console.error(`Agent "${agentName}" already exists. Try another name.`);
+		console.error(`Agent "${agentName}" already exists. Try a different name.`);
 		return;
 	}
 
@@ -37,7 +37,7 @@ async function createTokenTx() {
 	formData.append("file", fs.createReadStream(agentDetails.imagePath));
 	formData.append("name", agentDetails.name);
 	formData.append("symbol", agentDetails.symbol);
-	const modifiedDescription = `${agentDetails.description}\n\n. Made by AlgoSphere.`;
+	const modifiedDescription = `${agentDetails.description}\n\n. Made by AlgoSphere AI Agent Framework.`;
 	formData.append("description", modifiedDescription);
 	const metadataResponse = await fetch("https://pump.fun/api/ipfs", {
 		method: "POST",
@@ -85,9 +85,9 @@ async function createTokenTx() {
 			mintAddress: mintKeypair.publicKey.toBase58(),
 			personality: agentDetails.personality, // Save the personality field
 		});
-		console.log(`Agent "${agentName}" and mint address saved.`);
+		console.log(`Agent "${agentName}" and mint address saved in database.`);
 	} else {
-		console.error(`Error creating token: ${response.statusText}`);
+		console.error(`Error while creating token: ${response.statusText}`);
 	}
 }
 
