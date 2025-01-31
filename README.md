@@ -141,7 +141,7 @@ This project is protected under the MIT License - see [LICENSE](LICENSE) for det
 Connect with us through various channels:
 
 - 💬 [Telegram Community](https://t.me/example)
-- 🐦 [Twitter Updates](https://twitter.com/example)
+- 🐦 [Twitter Updates]([https://twitter.com/example](https://x.com/AlgoSphereai_))
 - 🌐 [Official Website](https://algosphereai.xyz)
 
 ---
